@@ -1,0 +1,38 @@
+html {
+  max-width: 1000px;
+}
+
+/*
+    client can edit these to whatever they want
+*/
+.menu {
+  list-style-type: none;
+  color: red;
+  padding-bottom: 50px;
+  font-size: 18px;
+}
+
+.menu li {
+  display: inline;
+  float: left;
+}
+
+/*
+    client can edit these to whatever they want
+*/
+.content-section {
+  max-width: 80%;
+  height: 150px;
+  background-color: lightblue;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*
+    client can edit these to whatever they want
+*/
+.footer {
+  background-color: lightcoral;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
