@@ -1,0 +1,11 @@
+body {
+  background-color: lightcoral;
+  font-size: larger;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+table {
+  border: black 2px solid;
+}
