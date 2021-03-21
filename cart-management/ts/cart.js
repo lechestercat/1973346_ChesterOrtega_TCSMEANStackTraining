@@ -1,5 +1,10 @@
 // initalie empty cart
 var cart = [];
+function storeInLocal() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Saved!");
+    //sessionStorage.setItem("blogData",JSON.stringify(blogData));
+}
 // class of type products
 var Product = /** @class */ (function () {
     function Product(id, name, price, qty) {
@@ -34,6 +39,7 @@ window.onload = function () {
         }
         console.log("LAPTOP ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
     var addPhone = document.getElementById("phone");
     addPhone.onclick = function () {
@@ -48,6 +54,7 @@ window.onload = function () {
         }
         console.log("PHONE ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
     var addCouch = document.getElementById("couch");
     addCouch.onclick = function () {
@@ -62,6 +69,7 @@ window.onload = function () {
         }
         console.log("COUCH ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
     var addDesk = document.getElementById("desk");
     addDesk.onclick = function () {
@@ -76,6 +84,7 @@ window.onload = function () {
         }
         console.log("DESK ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
     var addTree = document.getElementById("tree");
     addTree.onclick = function () {
@@ -90,6 +99,7 @@ window.onload = function () {
         }
         console.log("TREE ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
     var addBottle = document.getElementById("bottle");
     addBottle.onclick = function () {
@@ -104,5 +114,17 @@ window.onload = function () {
         }
         console.log("WATERBOTTLE ADDED!");
         console.log(cart);
+        cartQty(cart);
     };
 };
+function cartQty(cart) {
+    var count = 0;
+    // get cart size element to update it
+    var cartSize = document.getElementById("cartSize");
+    cart.forEach(function (element) {
+        count += element.qty;
+    });
+    cartSize.innerHTML = count;
+    console.log(count);
+    storeInLocal();
+}

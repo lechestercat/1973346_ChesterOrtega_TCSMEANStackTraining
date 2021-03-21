@@ -1,6 +1,12 @@
 // initalie empty cart
 var cart = [];
 
+function storeInLocal() {
+    localStorage.setItem("cart",JSON.stringify(cart));
+    console.log("Saved!")
+    //sessionStorage.setItem("blogData",JSON.stringify(blogData));
+ }
+
 // class of type products
 class Product {
     id:number;
@@ -41,7 +47,9 @@ window.onload = () => {
         
         console.log("LAPTOP ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
+
     var addPhone = document.getElementById("phone");
     addPhone.onclick = () => {
         if(cart.some(x => x === phone)){
@@ -53,7 +61,9 @@ window.onload = () => {
 
         console.log("PHONE ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
+
     var addCouch = document.getElementById("couch");
     addCouch.onclick = () => {
         if(cart.some(x => x === couch)){
@@ -62,8 +72,10 @@ window.onload = () => {
         }else{{
             cart.push(couch);
         }}
+
         console.log("COUCH ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
     var addDesk = document.getElementById("desk");
     addDesk.onclick = () => {
@@ -73,9 +85,12 @@ window.onload = () => {
         }else{{
             cart.push(desk);
         }}
+
         console.log("DESK ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
+
     var addTree = document.getElementById("tree");
     addTree.onclick = () => {
         if(cart.some(x => x === tree)){
@@ -84,9 +99,12 @@ window.onload = () => {
         }else{{
             cart.push(tree);
         }}
+
         console.log("TREE ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
+
     var addBottle = document.getElementById("bottle");
     addBottle.onclick = () => {
         if(cart.some(x => x === bottle)){
@@ -95,10 +113,24 @@ window.onload = () => {
         }else{{
             cart.push(bottle);
         }}
+
         console.log("WATERBOTTLE ADDED!");
         console.log(cart);
+        cartQty(cart);
     }
     
+}
 
+function cartQty(cart){
+    let count = 0;
+    // get cart size element to update it
+    let cartSize = document.getElementById("cartSize");
+    cart.forEach(element => {
+        count += element.qty;
+    });
+    cartSize.innerHTML = count.toString();
+    console.log(count);
+
+    storeInLocal();
 }
 
