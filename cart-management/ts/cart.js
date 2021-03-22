@@ -127,9 +127,9 @@ function cartQty(cart) {
     });
     cartSize.innerHTML = count.toString();
     console.log(count);
-    storeInLocal(cart);
+    storeInLocal();
 }
-function storeInLocal(cart) {
+function storeInLocal() {
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log("Saved!");
 }

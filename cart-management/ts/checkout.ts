@@ -1,3 +1,5 @@
+var total = 0;
+
 // function excutes upon page load 
 window.onload = () =>{
     //Retrieve the stored budgets
@@ -23,6 +25,13 @@ window.onload = () =>{
       //Fill cells with data
       itemCell.innerHTML = item.name;
       let sum = item.price * item.qty;
-      priceCell.innerHTML = sum.toString();
+      priceCell.innerHTML = "$" + sum.toString();
+
+      // get total
+      
+      total += sum;
     });
+
+    let addTotal = document.getElementById("totalSum");
+    addTotal.innerHTML = "$" + total.toString();
 }

@@ -124,7 +124,7 @@ window.onload = () => {
     
 }
 
-function cartQty(cart){
+function cartQty(cart:any){
     let count = 0;
 
     // get cart size element to update it
@@ -136,10 +136,10 @@ function cartQty(cart){
     cartSize.innerHTML = count.toString();
     console.log(count);
 
-    storeInLocal(cart);
+    storeInLocal();
 }
 
-function storeInLocal(cart) {
+function storeInLocal() {
     localStorage.setItem("cart",JSON.stringify(cart));
     console.log("Saved!")
  }
