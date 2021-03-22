@@ -1,11 +1,14 @@
-// initalie empty cart
-var cart = [];
+// check for previous localSession
+var cart = JSON.parse(localStorage.getItem("cart"));
 
-function storeInLocal() {
-    localStorage.setItem("cart",JSON.stringify(cart));
-    console.log("Saved!")
-    //sessionStorage.setItem("blogData",JSON.stringify(blogData));
- }
+console.log("storedCart: " + cart);
+
+//creats array if there are no stored data
+if (cart == null) {
+    cart = [];
+}
+
+cartQty(cart);
 
 // class of type products
 class Product {
@@ -15,10 +18,10 @@ class Product {
     qty:number;
 
     constructor(id:number, name:string, price:number, qty: number) {
-            this.id = id;
-            this.name = name;
-            this.price = price;
-            this.qty = qty;
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.qty = qty;
     }
     
 }
@@ -123,14 +126,21 @@ window.onload = () => {
 
 function cartQty(cart){
     let count = 0;
+
     // get cart size element to update it
     let cartSize = document.getElementById("cartSize");
     cart.forEach(element => {
         count += element.qty;
     });
+    
     cartSize.innerHTML = count.toString();
     console.log(count);
 
-    storeInLocal();
+    storeInLocal(cart);
 }
+
+function storeInLocal(cart) {
+    localStorage.setItem("cart",JSON.stringify(cart));
+    console.log("Saved!")
+ }
 

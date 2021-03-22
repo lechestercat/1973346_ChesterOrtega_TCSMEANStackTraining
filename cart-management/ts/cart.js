@@ -1,10 +1,11 @@
-// initalie empty cart
-var cart = [];
-function storeInLocal() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("Saved!");
-    //sessionStorage.setItem("blogData",JSON.stringify(blogData));
+// check for previous localSession
+var cart = JSON.parse(localStorage.getItem("cart"));
+console.log("storedCart: " + cart);
+//creats array if there are no stored data
+if (cart == null) {
+    cart = [];
 }
+cartQty(cart);
 // class of type products
 var Product = /** @class */ (function () {
     function Product(id, name, price, qty) {
@@ -124,7 +125,11 @@ function cartQty(cart) {
     cart.forEach(function (element) {
         count += element.qty;
     });
-    cartSize.innerHTML = count;
+    cartSize.innerHTML = count.toString();
     console.log(count);
-    storeInLocal();
+    storeInLocal(cart);
+}
+function storeInLocal(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Saved!");
 }
