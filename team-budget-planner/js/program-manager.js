@@ -31,7 +31,7 @@ function onFormSubmit() {
     var obj = {}    // empty object
     obj.client = document.getElementById("client").value;
     obj.pName = document.getElementById("pName").value;
-    obj.budget = document.getElementById("budget").value;
+    obj.qty += 1;
     return obj; 
 }
 
