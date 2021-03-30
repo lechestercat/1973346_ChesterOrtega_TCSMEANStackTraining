@@ -7,16 +7,22 @@
       "deadline": "03/21/2021"
     },
     {
-      "id": 666,
+      "id": 101,
       "name": "Lucy Fur",
       "task": "Be bad.",
       "deadline": "06/1/2021"
     },
     {
-      "id": 101,
-      "name": "Darren Dixon",
-      "task": "Go fuckhimself",
+      "id": 102,
+      "name": "Darren",
+      "task": "Go Code",
       "deadline": "3/30/2021"
+    },
+    {
+      "id": 103,
+      "name": "Max",
+      "task": "Rage",
+      "deadline": "3/31/2021"
     }
   ]
 }

@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 90%;
+}
+
+#leftSide {
+  background-color: darkgoldenrod;
+}
+
+#rightSide {
+  background-color: palevioletred;
+}

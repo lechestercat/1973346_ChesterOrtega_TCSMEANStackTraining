@@ -9,6 +9,7 @@ import { TasksServiceService } from '../tasks-service.service';
 })
 export class TasksComponent implements OnInit {
   tasks: Array<Tasks> = [];
+  displayedColumns: string[] = ['id', 'name', 'task', 'deadline'];
   constructor(public taskSer: TasksServiceService) {}
 
   ngOnInit(): void {
