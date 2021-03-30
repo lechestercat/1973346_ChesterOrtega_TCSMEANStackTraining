@@ -1,1 +1,14 @@
-<p>exam works!</p>
+<div>
+    <table border="1">
+        <tr>
+            <th>Question</th>
+            <th>Choices</th>
+            <th>Answer</th>
+        </tr>
+        <tr *ngFor="let ques of questions">
+                <td>{{ques.question}}</td>
+                <td>{{ques.choices}}</td>
+                <td>{{ques.answer}}</td>
+        </tr>
+    </table>
+</div>

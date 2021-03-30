@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Questions } from './questions.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionsService {
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
+
+  loadEmployeeDetails():Observable<Questions[]> {
+    return this.http.get<Questions[]>("http://localhost:3000/questions");
+  }
 }

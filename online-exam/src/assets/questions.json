@@ -1,0 +1,114 @@
+{
+"questions":[
+    {
+        "_id":      1,
+        "question": "1. How does Angular 4 improved error handling, when an error is caused by something in a template?",
+        "choices":[
+            "A. By enabling TypeScript's StrictNullChecks",
+            "B. By creating flattened versions of Angular modules",
+            "C. By generating source maps in terms of original template",
+            "D. None of the mentioned"
+        ],
+        "answer":   1
+    },
+    {
+        "_id":      2,
+        "question": "2. The . . . . . decorator allows us to define the pipe name that is globally available for use in any template in the across application.",
+        "choices": [
+            "A. pipeName",
+            "B. pipeDeco",
+            "C. Pipe",
+            "D. None"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      3,
+        "question": "3. Where would you put it?",
+        "choices":[
+            "A. In the Component",
+            "B. In the Template",
+            "C. In the Injectable decorator",
+            "D. In the module"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      4,
+        "question": "4. bservables help you manage . . . . . . . . data.",
+        "choices":[
+            "A. synchronous",
+            "B. asynchronous",
+            "C. Both asynchronous & synchronous",
+            "D. None of above"
+        ],
+        "answer":   1
+    },
+    {
+        "_id":      5,
+        "question": "5. How would you display a list of Employees on a webpage along with where they were in the list?",
+        "choices":[
+            "A. Loop through and print the index",
+            "B. Loop through and print the employees",
+            "C. Loop through and print the index and the employee",
+            "D. Pass both the index and the employee to a web service"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      6,
+        "question": "6. If you chain multiple pipes together, they are executed",
+        "choices":[
+            "A. in parallel",
+            "B. LIFO order",
+            "C. in the order in which you specify them",
+            "D. None of above"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      7,
+        "question": "7. We can subscribe to an observable using the . . . . . . . . The benefit of this is that Angular deals with your subscription during the lifecycle of a component. Angular will automatically subscribe and unsubscribe for you.",
+        "choices":[
+            "A. sync pipe",
+            "B. async var",
+            "C. async pipe",
+            "D. syn var"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      8,
+        "question": "8. The number pipe is location sensitive, which means that the same format argument will produce differently formatted results based on the . . . . . . .",
+        "choices":[
+            "A. user's format setting",
+            "B. user's currency setting",
+            "C. user's locale setting",
+            "D. All of above"
+        ],
+        "answer":   2
+    },
+    {
+        "_id":      9,
+        "question": "9. How would you retrieve a list of items from a server's URL?",
+        "choices":[
+            "A. Create a URL transaction",
+            "B. Use the HTTP get method",
+            "C. Create a get SQL statement",
+            "D. Use an HTTP package"
+        ],
+            "answer":   0
+    },
+    {
+        "_id":      10,
+        "question": "10. Which of the following is not built-in pipe in Angular?",
+        "choices":[
+            "A. DatePipe",
+            "B. CurrencyPipe",
+            "C. DataPipe",
+            "D. PercentPipe"
+        ],
+        "answer":   2
+    }
+]
+}
