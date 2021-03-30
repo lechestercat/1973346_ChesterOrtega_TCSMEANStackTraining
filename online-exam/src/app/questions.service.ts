@@ -4,13 +4,12 @@ import { Observable } from 'rxjs';
 import { Questions } from './questions.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuestionsService {
+  constructor(public http: HttpClient) {}
 
-  constructor(public http:HttpClient) { }
-
-  loadQuestionDetails():Observable<Questions[]> {
-    return this.http.get<Questions[]>("http://localhost:3000/questions");
+  loadQuestionDetails(): Observable<Questions[]> {
+    return this.http.get<Questions[]>('http://localhost:3000/questions');
   }
 }

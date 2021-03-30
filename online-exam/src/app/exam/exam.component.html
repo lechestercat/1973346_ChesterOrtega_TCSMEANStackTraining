@@ -1,22 +1,50 @@
 <div>
-   <div *ngFor = "let q of questions; let i = index">
-    <div [style]="highlightAnswer(i)">
-     Q{{q.id}}. {{q.question}}
-     </div>
-       <mat-radio-group [(ngModel)] = "selectedAnswer[i]">
-           <mat-radio-button value=0>{{q.choices[0]}}</mat-radio-button><br/>
-           <mat-radio-button value=1>{{q.choices[1]}}</mat-radio-button><br/>
-           <mat-radio-button value=2>{{q.choices[2]}}</mat-radio-button><br/>
-           <mat-radio-button value=3>{{q.choices[3]}}</mat-radio-button><br/>
-       </mat-radio-group>
-       <hr>
-       {{selectedAnswer[i]}}
-   </div>
-   <button type="button" mat-stroked-button style="color: rgb(18, 17, 20)" (click)="submitExam(selectedAnswer)">Submit Exam</button>
-   <br/><br/>
-   <div *ngIf="examSubmitted">
-       You have {{count}}
-   </div>
-   
-   
+  <h1>Angular Exam</h1>
+  <br />
+
+  <!--
+      Loops through and displays questions and choices.
+  -->
+  <div *ngFor="let q of questions; let i = index">
+    <div [style]="highlightQuestion(i)">Q{{ q.id }}. {{ q.question }}</div>
+    <mat-radio-group [(ngModel)]="selectedAnswer[i]">
+      <mat-radio-button value="0">{{ q.choices[0] }}</mat-radio-button
+      ><br />
+      <mat-radio-button value="1">{{ q.choices[1] }}</mat-radio-button
+      ><br />
+      <mat-radio-button value="2">{{ q.choices[2] }}</mat-radio-button
+      ><br />
+      <mat-radio-button value="3">{{ q.choices[3] }}</mat-radio-button
+      ><br />
+    </mat-radio-group>
+    <!--
+        Displays selected answer and correct answer after submission.
+    -->
+    <div *ngIf="examSubmitted">
+      <h3>You answered {{ q.choices[selectedAnswer[i]] }}.</h3>
+      <h3>Correct answer is {{ q.choices[q.answer] }}.</h3>
+    </div>
+    <hr />
+  </div>
+  <br />
+  <!--
+      Submits exam.
+  -->
+  <button
+    type="button"
+    mat-flat-button
+    color="warn"
+    (click)="submitExam(selectedAnswer)"
+  >
+    Submit Exam
+  </button>
+  <br /><br />
+  <!--
+      Displays score after exam submission. 
+  -->
+  <div *ngIf="examSubmitted">
+    <h2>You got {{ correctCount }}/10.</h2>
+    <h2 [style]="scoreMarker(score)">{{ score }}</h2>
+  </div>
+  <br /><br />
 </div>
