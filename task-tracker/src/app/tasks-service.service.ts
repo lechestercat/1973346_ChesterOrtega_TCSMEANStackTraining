@@ -12,4 +12,11 @@ export class TasksServiceService {
   loadTaskDetails(): Observable<Tasks[]> {
     return this.http.get<Tasks[]>('http://localhost:3000/tasks');
   }
+
+  storeTasks(tsk: any) {
+    this.http.post('http://localhost:3000/tasks', tsk).subscribe(
+      (result) => console.log(result),
+      (error) => console.log(error)
+    );
+  }
 }

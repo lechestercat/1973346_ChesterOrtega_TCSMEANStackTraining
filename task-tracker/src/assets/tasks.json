@@ -3,8 +3,20 @@
     {
       "id": 100,
       "name": "Chester",
-      "task": "Finsih Simplilearn",
+      "task": "Finish Simplilearn",
       "deadline": "03/21/2021"
+    },
+    {
+      "id": 666,
+      "name": "Lucy Fur",
+      "task": "Be bad.",
+      "deadline": "06/1/2021"
+    },
+    {
+      "id": 101,
+      "name": "Darren Dixon",
+      "task": "Go fuckhimself",
+      "deadline": "3/30/2021"
     }
   ]
 }

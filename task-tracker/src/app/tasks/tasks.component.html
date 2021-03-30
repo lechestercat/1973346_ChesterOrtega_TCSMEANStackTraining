@@ -1,1 +1,49 @@
-<p>tasks works!</p>
+<h1>Task Tracker</h1>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    To-do Tasks:
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+      <form #userRef="ngForm" (ngSubmit)="submitTask(userRef.value)">
+        <label>ID: </label>
+        <input type="number" name="id" ngModel /> <br />
+        <label>Name: </label>
+        <input type="text" name="name" ngModel /> <br />
+        <label>Task: </label>
+        <input type="text" name="task" ngModel /> <br />
+        <label>Deadline: </label>
+        <input type="text" name="deadline" ngModel /> <br />
+        <input type="submit" value="submit" [disabled]="!userRef.valid" />
+        <input type="reset" value="reset" />
+      </form>
+    </div>
+  </mat-grid-tile>
+
+  To-do List:
+  <mat-grid-tile>
+    <div>
+      <table border="1">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Task</th>
+          <th>Deadline</th>
+        </tr>
+        <tr *ngFor="let tsk of tasks">
+          <td>{{ tsk.id }}</td>
+          <td>{{ tsk.name }}</td>
+          <td>{{ tsk.task }}</td>
+          <td>{{ tsk.deadline }}</td>
+        </tr>
+      </table>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
