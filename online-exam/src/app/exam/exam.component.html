@@ -1,14 +1,22 @@
 <div>
-    <table border="1">
-        <tr>
-            <th>Question</th>
-            <th>Choices</th>
-            <th>Answer</th>
-        </tr>
-        <tr *ngFor="let ques of questions">
-                <td>{{ques.question}}</td>
-                <td>{{ques.choices}}</td>
-                <td>{{ques.answer}}</td>
-        </tr>
-    </table>
+   <div *ngFor = "let q of questions; let i = index">
+    <div [style]="highlightAnswer(i)">
+     Q{{q.id}}. {{q.question}}
+     </div>
+       <mat-radio-group [(ngModel)] = "selectedAnswer[i]">
+           <mat-radio-button value=0>{{q.choices[0]}}</mat-radio-button><br/>
+           <mat-radio-button value=1>{{q.choices[1]}}</mat-radio-button><br/>
+           <mat-radio-button value=2>{{q.choices[2]}}</mat-radio-button><br/>
+           <mat-radio-button value=3>{{q.choices[3]}}</mat-radio-button><br/>
+       </mat-radio-group>
+       <hr>
+       {{selectedAnswer[i]}}
+   </div>
+   <button type="button" mat-stroked-button style="color: rgb(18, 17, 20)" (click)="submitExam(selectedAnswer)">Submit Exam</button>
+   <br/><br/>
+   <div *ngIf="examSubmitted">
+       You have {{count}}
+   </div>
+   
+   
 </div>

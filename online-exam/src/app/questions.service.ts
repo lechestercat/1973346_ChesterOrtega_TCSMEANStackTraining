@@ -10,7 +10,7 @@ export class QuestionsService {
 
   constructor(public http:HttpClient) { }
 
-  loadEmployeeDetails():Observable<Questions[]> {
+  loadQuestionDetails():Observable<Questions[]> {
     return this.http.get<Questions[]>("http://localhost:3000/questions");
   }
 }

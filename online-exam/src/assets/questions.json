@@ -35,7 +35,7 @@
     },
     {
         "_id":      4,
-        "question": "4. bservables help you manage . . . . . . . . data.",
+        "question": "4. Observables help you manage . . . . . . . . data.",
         "choices":[
             "A. synchronous",
             "B. asynchronous",
