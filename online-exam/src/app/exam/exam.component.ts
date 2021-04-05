@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
 import { Questions } from '../questions.model';
 import { QuestionsService } from '../questions.service';
 
