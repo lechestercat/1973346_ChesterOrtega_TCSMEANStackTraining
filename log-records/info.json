@@ -1,3 +1,5 @@
 [
-	{"id":100,"first name":"Chester","last name":"Ortega","age":29,"gender":"Male","email":"chester@tcs.com","date":"4/5/2021","time":"3:09:35 PM"}
+	{"id":100,"first name":"Chester","last name":"Ortega","age":29,"gender":"Male","email":"chester@tcs.com","date":"4/5/2021","time":"3:09:35 PM"},
+	{"id":101,"first name":"Steve Rodgers","last name":"America","age":33,"gender":"M","email":"capnamerica@aol.com","date":"4/5/2021","time":"3:33:05 PM"},
+	{"id":102,"first name":"Joe","last name":"Biden","age":75,"gender":"Male","email":"JoeB@america.com","date":"4/5/2021","time":"3:45:37 PM"}
 ]
