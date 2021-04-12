@@ -9,8 +9,11 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('Client connected to application.....');
 
-  socket.on('chat', (msg) => {
-    console.log(msg);
+  socket.on('name', (name) => {
+    console.log(name);
+  });
+  socket.on('message', (message) => {
+    console.log(message);
   });
 });
 http.listen(9090, () => console.log('server running on port number 9090'));

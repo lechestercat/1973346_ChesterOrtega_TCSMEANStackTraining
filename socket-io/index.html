@@ -14,11 +14,20 @@
           // that value you can emit to server.
       //}
       function fun() {
-          socket.emit("chat",{"id":100,"name":"Ravi","salary":120000});
+          var name = document.getElementById("name").value;
+          var message = document.getElementById("msg").value;
+          socket.emit("name", "Hello " + name);
+          socket.emit("message","Your " + message);
       }
     </script>
   </head>
   <body>
-    <input type="button" value="click here" onclick="fun()" />
+    <form action="">
+      <label>Name: </label>
+      <input type="text" name="name" id="name" /><br />
+      <label>Message: </label>
+      <input type="text" name="msg" id="msg" /><br />
+      <input type="button" value="click here" onclick="fun()" />
+    </form>
   </body>
 </html>
