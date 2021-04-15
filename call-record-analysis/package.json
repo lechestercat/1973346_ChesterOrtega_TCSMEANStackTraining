@@ -1,0 +1,14 @@
+{
+  "name": "call-record-analysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "callRecordCollector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chester Ortega",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.12.4"
+  }
+}
