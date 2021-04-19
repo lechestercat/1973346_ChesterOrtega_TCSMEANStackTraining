@@ -25,8 +25,8 @@ const getAllCourseDetails = async (req, res) => {
         tableHTML += `
                 <tr>
                     <td style="border:1px solid black;">${course._id}</td>
-                    <td style="border:1px solid black;">${course.c_name}</td>
-                    <td style="border:1px solid black;">${course.description}</td>
+                    <td style="border:1px solid black;">${course.courseName}</td>
+                    <td style="border:1px solid black;">${course.courseDesc}</td>
                     <td style="border:1px solid black;">${course.price}</td>
                 </tr>`;
       });
@@ -36,7 +36,7 @@ const getAllCourseDetails = async (req, res) => {
       //button for the user to go back to display page
       const buttonHTML = `
             <div style="text-align:center;">
-                <a href="../displayCourses">Go Back</a>
+                <a href="../displayCourse">Go Back</a>
             </div>`;
 
       //SEND result
@@ -54,8 +54,8 @@ const getAllCourseDetails = async (req, res) => {
 const addCourse = (req, res) => {
   let course = new CourseModel({
     _id: req.body.courseID,
-    c_name: req.body.name,
-    description: req.body.description,
+    courseName: req.body.name,
+    courseDesc: req.body.description,
     price: req.body.price,
   });
   course.save((error, result) => {
