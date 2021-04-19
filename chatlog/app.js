@@ -20,9 +20,9 @@ mongoose.connection; //connect to database
 function createChatTable(chatLog) {
   let chatTableHTML = `<table style="border:1px solid black;margin:auto;text-align:center;"> 
     <thead><tr>
-        <th style="border:1px solid black;">Chat ID</th>
+        <th style="border:1px solid black;">ID</th>
         <th style="border:1px solid black;">Name</th>
-        <th style="border:1px solid black;">Message</th>
+        <th style="border:1px solid red;">Message</th>
     </tr></thead>`;
 
   chatLog.forEach((message) => {
@@ -30,7 +30,7 @@ function createChatTable(chatLog) {
         <tr>
             <td style="border:1px solid black;">${message._id}</td>
             <td style="border:1px solid black;">${message.name}</td>
-            <td style="border:1px solid black;">${message.message}</td>
+            <td style="border:1px solid red;">${message.message}</td>
         </tr>`;
   });
 
@@ -47,7 +47,7 @@ function getChatLog(res) {
       chatLog = log_data;
       //create an HTML table and back button with the data
       let chatTable = createChatTable(chatLog);
-      chatTable += `<div style="text-align:center;"><a href="/">Go Back</a></div>`;
+      chatTable += `<div style="text-align:center;"><a href="/">Go Home</a></div>`;
       //send the table and button to the user
       res.end(chatTable);
     } else {
@@ -96,4 +96,4 @@ io.on('connection', (socket) => {
   });
 });
 
-http.listen(port, () => console.log(`HTTP Server running on port ${port}`));
+http.listen(port, () => console.log(`Server running on port ${port}`));
