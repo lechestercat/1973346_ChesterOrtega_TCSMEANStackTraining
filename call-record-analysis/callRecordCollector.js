@@ -29,7 +29,7 @@ db.once('open', () => {
   // read JSON and parse the data
   let rawdata = fs.readFileSync('call_data.json');
   let phData = JSON.parse(rawdata);
-  //console.log(phData);
+  console.log(phData);
 
   // Creating Model using schema
   let Call = mongoose.model('Call', CallSchema);
